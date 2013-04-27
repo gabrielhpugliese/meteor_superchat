@@ -4,7 +4,7 @@
     <div id="chat">
         {{#each msgs}}
         <p>
-            {{owner}} {{action}}: {{msg}}
+            <span style="color: #{{color}}">{{owner}}</span> {{action}}: {{msg}}
         </p>
 	    {{scrollToBottom}}
         {{/each}}

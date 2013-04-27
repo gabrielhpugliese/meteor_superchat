@@ -38,7 +38,8 @@ Template.chatroom.events({
                 action: 'changed name to',
                 msg: newName,
                 owner: Session.get('name'),
-                host: Meteor.router.invocation().host
+                host: Meteor.router.invocation().host,
+                color: $('input.color').val()
             });
         }
         Session.set('name', newName);
@@ -52,7 +53,8 @@ sendMsg = function () {
         action: 'says',
         msg: $msg.val(),
         owner: Session.get('name'),
-        host: Meteor.router.invocation().host
+        host: Meteor.router.invocation().host,
+        color: $('input.color').val()
     });
     $msg.val('');
 }

@@ -4,16 +4,14 @@
     <div id="chat">
         {{#each msgs}}
         <p>
-            {{#with getProfile owner}}
-            <a href="{{url}}" target="_blank"><img src="{{pic_square}}" />{{name}}</a>
-            {{/with}}
-            {{action}}: {{msg}}
+            {{owner}} {{action}}: {{msg}}
         </p>
 	    {{scrollToBottom}}
         {{/each}}
     </div>
     <div id="msg-wrap">
-        {{loginButtons}}
+    	<input type="text" name="user-name" placeholder="Your name"/>
+        <button class="set-name">Set name</button>
     	{{#constant}}
         <div>
 	        <textarea cols="30" rows="4" type="text" id="msg" ></textarea>

@@ -32,6 +32,6 @@ Meteor.presences.find().observe({
 
 Msgs.allow({
     insert : function (userId, doc) {
-        return userId && doc.owner === userId && doc.msg && doc.host && doc.action;
+        return doc.owner && doc.msg && doc.host && doc.action;
     }
 });

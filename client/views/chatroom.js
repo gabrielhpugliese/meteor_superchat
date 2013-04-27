@@ -17,12 +17,6 @@ Template.chatroom.msgs = function() {
     return Msgs.find({host : Meteor.router.invocation().host});
 };
 
-Template.chatroom.getProfile = function(user_id) {
-    try {
-        return Meteor.users.findOne(user_id)['profile'];
-    } catch (err) {}
-};
-
 Template.chatroom.scrollToBottom = function() {
     // TODO: Figure how to do it properly
     Meteor.defer(function() {
@@ -36,6 +30,18 @@ Template.chatroom.scrollToBottom = function() {
 Template.chatroom.events({
     'click .msg-send' : function () {
         sendMsg();
+    },
+    'click .set-name' : function () {
+        var newName = $('input[name=user-name]').val();
+        if (Session.get('name') && Session.get('name') != newName) {
+            Msgs.insert({
+                action: 'changed name to',
+                msg: newName,
+                owner: Session.get('name'),
+                host: Meteor.router.invocation().host
+            });
+        }
+        Session.set('name', newName);
     }
 });
 
@@ -45,7 +51,7 @@ sendMsg = function () {
     Msgs.insert({
         action: 'says',
         msg: $msg.val(),
-        owner: Meteor.userId(),
+        owner: Session.get('name'),
         host: Meteor.router.invocation().host
     });
     $msg.val('');

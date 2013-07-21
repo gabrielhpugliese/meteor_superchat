@@ -1,13 +1,4 @@
 if (Meteor.isClient) {
-  new ForkMe({
-    user: 'gabrielhpugliese',
-    repo: 'meteor_superchat',
-    ribbon: {
-      color: 'red',
-      position: 'left'
-    },
-  });
-  
 WebFontConfig = {
     google: { families: [ 'Lato:400,700:latin' ] }
 };

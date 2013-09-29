@@ -5,6 +5,8 @@ Smart package for SuperChat. Superchat is a chat that includes Social Login and 
 
 Works with Meteor release 0.6.4.1 and below only.
 
+If you **don't need persistence** see [SuperChat-Streams](https://github.com/gabrielhpugliese/meteor_superchat_streams) instead.
+
 ## Demo
 
 http://superchat.meteor.com

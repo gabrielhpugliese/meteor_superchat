@@ -3,5 +3,8 @@
     "superchat": {},
     "fork-me": {},
     "mini-pages": {}
+  },
+  "meteor": {
+    "tag": "v0.5.4"
   }
 }

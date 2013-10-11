@@ -10,7 +10,7 @@ If you **don't need persistence** see [SuperChat-Streams](https://github.com/gab
 ## WARNING
 
 This package is much more behind than [SuperChat-Streams](https://github.com/gabrielhpugliese/meteor_superchat_streams).
-It will present some bugs that may be not corrected by me. I'm dedicated to the other package.
+It presents some bugs that may be not corrected by me. I'm dedicated to the other package.
 
 ## Demo
 
